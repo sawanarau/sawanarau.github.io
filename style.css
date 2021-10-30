@@ -1,0 +1,17 @@
+body {
+    background-color: DodgerBlue;
+    font-family: 'Franklin Gothic Medium';
+    font-size : 120px;
+    text-align: center;
+    font-style: oblique;
+}
+
+h1 {
+    color: whitesmoke;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 120px;
+
+    border: 10px solid orangered;
+    border-radius: 90px;
+}
+
