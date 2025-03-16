@@ -1,0 +1,144 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+  font-family: "Finlandica", sans-serif;
+  color: white;
+  background: url("../img/tourbg2.jpg") no-repeat center center fixed;
+  background-size: cover;
+  height: 100vh;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Noise Effect */
+.noise {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("../img/noise.gif");
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+/* Logo */
+.logo-link {
+  text-decoration: none; /* Remove underline from the link */
+}
+
+.logo {
+  width: 50vw; /* Adjust size of the logo */
+  max-width: 1000px; /* Max width for logo */
+  margin-top: 5vh; /* Space from the top */
+  z-index: 10; /* Ensure logo stays on top */
+  padding-bottom: 8vh;
+  filter: invert(50%);
+}
+
+/* Content Section with Grid Layout */
+.content-section {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  gap: 4vw; /* Space between columns */
+  align-items: center;
+  width: 80%;
+  margin: 4vh 0; /* Vertical margin between rows */
+}
+
+/* Image styling */
+.content-section .image {
+  width: 20vw;
+  height: auto;
+  max-width: 400px;
+}
+
+/* Text styling */
+.content-section .text {
+  font-size: 4vw;
+  white-space: nowrap;
+  color: rgba(169, 169, 169, 0.7); /* Grey color with transparency */
+  filter: blur(1.5px); /* Slight blur effect */
+  padding: 0 5vw;
+}
+.cont-section .text .row2 {
+  text-align: right;
+}
+
+/* Footer */
+footer {
+  display: flex; /* Use flexbox */
+  justify-content: space-between; /* Distribute items: left and right */
+  align-items: center; /* Vertically center the items */
+  padding-top: 8vh; /* Add padding to the top of the footer */
+  padding-left: 1vw;
+  padding-right: 1vw;
+  font-family: "Finlandica", sans-serif;
+  width: 100%; /* Ensure footer takes full width of the page */
+  position: relative; /* Fix footer to the bottom of the page */
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+/* Footer Link Styling */
+footer a {
+  color: gray;
+  text-decoration: none;
+  font-size: 1.8vw;
+  transition: color 0.3s ease-in-out;
+}
+
+/* Hover Effect for Links */
+footer a:hover {
+  color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .logo {
+    width: 100vw;
+  }
+
+  /* Stack content in a single column on smaller screens */
+  .content-section {
+    grid-template-columns: 1fr; /* One column for mobile */
+    gap: 2vh; /* Less gap on mobile */
+  }
+
+  /* Adjust image size for mobile */
+  .content-section .image {
+    width: 20vw;
+  }
+
+  /* Adjust text size for mobile */
+  .content-section .text {
+    font-size: 4vw; /* Larger font on mobile */
+    padding: 0 10vw; /* More padding on mobile */
+    filter: blur(0.5px);
+  }
+}
+
+/* Specific Layout for Each Row - Alternating Content */
+.row1 {
+  grid-template-columns: 1fr 2fr 0.5fr; /* Image on the left, Text on the right */
+  text-align: left;
+}
+
+.row2 {
+  grid-template-columns: 1fr 2fr 1fr; /* Text on the left, Image on the right */
+  text-align: right;
+}
+
+.row3 {
+  grid-template-columns: 1fr 2fr 1fr; /* Image on the left, Text on the right */
+  text-align: left;
+}

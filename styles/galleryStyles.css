@@ -1,0 +1,132 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Background with noise effect */
+body {
+  background: url("../img/tourbg4.jpg") no-repeat center center fixed;
+  background-size: cover;
+  position: relative;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2vw;
+  padding-bottom: 4vw;
+}
+
+/* Logo */
+.logo img {
+  width: 16vw; /* Responsive logo size */
+  max-width: 500px; /* Prevents it from getting too big */
+  position: absolute;
+  top: 2vw;
+  left: 4vw;
+  cursor: pointer;
+}
+
+/* Gallery Grid */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(
+    3,
+    minmax(250px, 1fr)
+  ); /* Always max 3 images per row */
+  gap: 1.5vw;
+  width: 90%;
+  max-width: 1000px;
+  margin-top: 16vh;
+}
+
+/* Gallery Items */
+.gallery img {
+  width: 100%;
+  aspect-ratio: 4 / 3; /* Maintains a 4:3 ratio for images */
+  object-fit: cover; /* Ensures images fill their space without distortion */
+  cursor: pointer;
+}
+
+/* Noise Effect */
+.noise {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("../img/noise.gif");
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+/* Pop-up Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  max-width: 80vw;
+  max-height: 80vh;
+}
+
+/* Close Button */
+.close {
+  position: absolute;
+  top: 2vw;
+  right: 2vw;
+  font-size: 4vw;
+  color: white;
+  cursor: pointer;
+}
+
+footer {
+  display: flex; /* Use flexbox */
+  justify-content: space-between; /* Distribute items: left and right */
+  align-items: center; /* Vertically center the items */
+  padding-top: 2vh; /* Add padding to the top of the footer */
+  position: absolute; /* Fix it to the bottom of the page */
+  bottom: 0; /* Make sure it stays at the bottom */
+  left: 2vh; /* Ensure it starts from the left */
+  right: 2vh; /* Ensure it spans the full width */
+  font-family: "Finlandica", sans-serif;
+}
+
+footer a {
+  color: gray;
+  text-decoration: none;
+  font-size: 1.8vw;
+  transition: color 0.3s ease-in-out;
+}
+
+footer a:hover {
+  color: white;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .gallery {
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(180px, 1fr)
+    ); /* Adjust grid on smaller screens */
+  }
+
+  .logo img {
+    width: 10vw; /* Adjust logo size on smaller screens */
+  }
+
+  footer a {
+    font-size: 1.5vw;
+  }
+}
