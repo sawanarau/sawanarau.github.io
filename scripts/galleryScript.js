@@ -6,8 +6,9 @@ const closeModal = document.querySelector(".close");
 // Open modal when clicking an image
 document.querySelectorAll(".gallery-item").forEach(img => {
     img.addEventListener("click", () => {
+        // Replace "img_thumbnails" with "img_normal" to get the full-size image
         modal.style.display = "flex";
-        modalImg.src = img.src;
+        modalImg.src = img.src.replace("img_thumbnails", "img_normal");
     });
 });
 
@@ -16,13 +17,12 @@ closeModal.addEventListener("click", () => {
     modal.style.display = "none";
 });
 
-// Close modal when clicking outside image
+// Close modal when clicking outside the image
 modal.addEventListener("click", (e) => {
     if (e.target === modal) {
         modal.style.display = "none";
     }
 });
-
 
 document.addEventListener("DOMContentLoaded", function () {
     const preloader = document.getElementById("preloader");
