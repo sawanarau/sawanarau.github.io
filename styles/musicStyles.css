@@ -36,27 +36,29 @@ body {
 }
 
 .logo {
-  width: 50vw; /* Adjust size of the logo */
-  max-width: 1000px; /* Max width for logo */
-  margin-top: 5vh; /* Space from the top */
-  z-index: 10; /* Ensure logo stays on top */
-  padding-bottom: 8vh;
+  position: absolute; /* Take it out of the normal flow */
+  top: 3vh; /* Distance from the top */
+  right: 3vw; /* Distance from the right */
+  width: 35vw;
+  max-width: 1000px;
+  z-index: 10;
   filter: invert(50%);
 }
 
 /* Content Section with Grid Layout */
 .content-section {
   display: grid;
-  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-columns: 1fr 2fr 1fr;
   gap: 4vw; /* Space between columns */
   align-items: center;
   width: 80%;
-  margin: 4vh 0; /* Vertical margin between rows */
+  margin: 2vh 0;
+  margin-top: 8vh;
 }
 
 /* Image styling */
 .content-section .image {
-  width: 20vw;
+  width: 8vw;
   height: auto;
   max-width: 400px;
 }
@@ -78,7 +80,7 @@ footer {
   display: flex; /* Use flexbox */
   justify-content: space-between; /* Distribute items: left and right */
   align-items: center; /* Vertically center the items */
-  padding-top: 8vh; /* Add padding to the top of the footer */
+  padding-top: 4vh; /* Add padding to the top of the footer */
   padding-left: 1vw;
   padding-right: 1vw;
   font-family: "Finlandica", sans-serif;
@@ -102,43 +104,70 @@ footer a:hover {
   color: white;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
+  /* Shrink logo and keep it in top-right */
   .logo {
-    width: 100vw;
+    width: 40vw;
+    top: 2vh;
+    right: 2vw;
   }
 
-  /* Stack content in a single column on smaller screens */
+  /* Stack everything vertically */
   .content-section {
-    grid-template-columns: 1fr; /* One column for mobile */
-    gap: 2vh; /* Less gap on mobile */
+    display: flex;
+    flex-direction: column;
+    gap: 4vh;
+    align-items: center;
+    width: 90%;
+    margin-top: 2vh; /* More space under logo */
   }
 
-  /* Adjust image size for mobile */
+  .content-section.row1 {
+    margin-top: 12vh; /* More space under logo */
+  }
+
+  /* Image styling for mobile */
   .content-section .image {
-    width: 20vw;
+    width: 40vw;
+    max-width: 300px;
   }
 
-  /* Adjust text size for mobile */
+  /* Text styling for mobile */
   .content-section .text {
-    font-size: 4vw; /* Larger font on mobile */
-    padding: 0 10vw; /* More padding on mobile */
+    font-size: 5vw;
+    text-align: center;
+    white-space: normal;
+    padding: 0 5vw;
     filter: blur(0.5px);
+  }
+
+  /* Fix footer layout on mobile */
+  footer {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 1vh;
+    padding: 4vh 2vw;
+  }
+
+  footer a {
+    font-size: 4vw;
   }
 }
 
 /* Specific Layout for Each Row - Alternating Content */
 .row1 {
-  grid-template-columns: 1fr 2fr 0.5fr; /* Image on the left, Text on the right */
+  grid-template-columns: 1fr 1fr 3fr; /* Image on the left, Text on the right */
   text-align: left;
 }
 
 .row2 {
-  grid-template-columns: 1fr 2fr 1fr; /* Text on the left, Image on the right */
+  grid-template-columns: 1fr 1fr 3fr; /* Text on the left, Image on the right */
   text-align: right;
 }
 
 .row3 {
-  grid-template-columns: 1fr 2fr 1fr; /* Image on the left, Text on the right */
+  grid-template-columns: 1fr 1fr 3fr; /* Image on the left, Text on the right */
   text-align: left;
 }

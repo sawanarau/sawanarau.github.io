@@ -5,6 +5,11 @@
   box-sizing: border-box;
 }
 
+html,
+body {
+  height: 100%;
+}
+
 /* Background Image */
 body {
   background: url("../img/tourbg4.jpg") no-repeat center center fixed;
@@ -97,11 +102,22 @@ footer a:hover {
 /* Responsive Adjustments */
 @media (max-width: 768px) {
   .logo {
-    width: 30vw; /* Logo size for smaller screens */
+    width: 50vw; /* Logo size for smaller screens */
   }
 
   .about-text {
     font-size: 4vw; /* Adjust text size for smaller screens */
     padding: 0 5vw; /* Less padding for smaller screens */
+    filter: blur(0.5px); /* Slight blur effect */
+  }
+
+  footer {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 1vh;
+    padding: 2vh 2vw 1vh; /* Smaller bottom padding */
+    margin-top: auto; /* Pushes footer to bottom if content is short */
   }
 }
