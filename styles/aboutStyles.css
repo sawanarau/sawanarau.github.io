@@ -5,28 +5,17 @@
   box-sizing: border-box;
 }
 
-
-html,
+/* Body styling */
 body {
-  height: 100%;
-}
-
-/* Background Image */
-body {
-  background: url("../img/tourbg4.jpg") no-repeat center center fixed;
-  background-size: cover;
   font-family: "Finlandica", sans-serif;
   color: white;
-  height: 100vh;
-  text-align: center;
-}
-
-.container{
-  min-height: 100vh; 
+  background: url("../img/bg2.jpg") no-repeat center center fixed;
+  background-size: cover;
+  height: 100%;
+  padding: 0;
   display: flex;
   flex-direction: column;
-  align-items:center;
-  justify-content: space-between;
+  align-items: center;
 }
 
 /* Noise Effect */
@@ -37,66 +26,99 @@ body {
   width: 100%;
   height: 100%;
   background: url("../img/noise.gif");
-  opacity: 0.15;
+  opacity: 0.1;
   pointer-events: none;
-  z-index: 0;
 }
 
 /* Logo */
 .logo-link {
-  text-decoration: none; /* Remove underline from the link */
+  text-decoration: none;
 }
 
 .logo {
-  width: 100vw; /* Adjust the width of the logo */
-  max-width: 1500px; /* Maximum width to prevent it from being too large */
-  margin-top: 5vh; /* Space from the top of the page */
-  z-index: 10; /* Ensure it stays on top of other elements */
+  position: absolute;
+  top: 3vh;
+  right: 3vw;
+  width: 35vw;
+  max-width: 1000px;
+  z-index: 10;
+  filter: invert(50%);
 }
 
-/* Full-width Image */
+/* Band Members Section */
+.content-section {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: 4vw;
+  align-items: center;
+  width: 80%;
+  margin-top: 8vh;
+}
+
+.content-section .image {
+  width: 8vw;
+  height: auto;
+  max-width: 400px;
+}
+
+.content-section .text {
+  font-size: 4vw;
+  white-space: nowrap;
+  color: rgba(169, 169, 169, 0.7);
+  filter: blur(1.5px);
+  padding: 0 5vw;
+}
+
+/* Alternate row layouts */
+.row1 {
+  grid-template-columns: 1fr 1fr 3fr;
+  text-align: left;
+}
+
+.row2 {
+  grid-template-columns: 1fr 1fr 3fr;
+  text-align: right;
+}
+
+.row3 {
+  grid-template-columns: 1fr 1fr 3fr;
+  text-align: left;
+}
+
+/* About Text (from old about page) */
+.about-text {
+  margin-top: 10vh;
+  font-size: 2vw;
+  color: rgba(136, 136, 136, 0.7);
+  filter: blur(1.5px);
+  padding: 0 10vw;
+  text-align: justify;
+}
+
+/* Full-width Image (from old about page) */
 .full-width-image {
   width: 100%;
-  margin-top: 4vh; /* Space between logo and image */
-  position: relative;
-  
+  margin-top: 6vh;
 }
 
 .full-width-image img {
-  width: 100%; /* Ensure the image spans full width */
-  height: auto; /* Keep aspect ratio of the image */
+  width: 100%;
+  height: auto;
   display: block;
-}
-
-/* About Text */
-.about-text {
-  margin-top: 3vh; /* Space from the image */
-  font-size: 2vw;
-  color: rgba(63, 63, 63, 0.7); /* Grey color with transparency */
-  filter: blur(1.5px); /* Slight blur effect */
-  padding: 0 10vw; /* Optional: Padding to give some space on the sides */
-  z-index: 5;
-  text-align: justify;
 }
 
 /* Footer */
 footer {
-  display: flex; /* Use flexbox */
-  justify-content: space-between; /* Distribute items: left and right */
-  align-items: center; /* Vertically center the items */
-  padding-left: 1vw;
-  padding-right: 1vw;
-  margin-bottom: 0;
-  padding-bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4vh 2vw;
+  width: 100%;
   font-family: "Finlandica", sans-serif;
-  width: 100%; /* Ensure footer takes full width of the page */
-  position: absolute;
+  position: relative;
   bottom: 0;
-
-
 }
 
-/* Footer Link Styling */
 footer a {
   color: gray;
   text-decoration: none;
@@ -104,34 +126,52 @@ footer a {
   transition: color 0.3s ease-in-out;
 }
 
-/* Hover Effect for Links */
 footer a:hover {
   color: white;
 }
 
-
-
-
-
 /* Responsive Adjustments */
 @media (max-width: 768px) {
   .logo {
-    width: 50vw; /* Logo size for smaller screens */
+    width: 40vw;
+    top: 2vh;
+    right: 2vw;
+  }
+
+  .content-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    margin-top: 4vh;
+  }
+
+  .content-section .image {
+    width: 40vw;
+    max-width: 300px;
+  }
+
+  .content-section .text {
+    font-size: 5vw;
+    text-align: center;
+    filter: blur(0.5px);
   }
 
   .about-text {
-    font-size: 4vw; /* Adjust text size for smaller screens */
-    padding: 0 5vw; /* Less padding for smaller screens */
-    filter: blur(0.5px); /* Slight blur effect */
+    font-size: 4vw;
+    padding: 0 5vw;
+    filter: blur(0.5px);
   }
 
   footer {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center;
     gap: 1vh;
-    padding: 2vh 2vw 1vh; /* Smaller bottom padding */
-    margin-top: auto; /* Pushes footer to bottom if content is short */
+    padding: 4vh 2vw;
+  }
+
+  footer a {
+    font-size: 4vw;
   }
 }

@@ -6,17 +6,18 @@
 }
 
 body {
-  background: url("../img/tourbg2.jpg") no-repeat center center fixed;
+  background: url("../img/bg2.jpg") no-repeat center center fixed;
   background-size: cover;
   font-family: "Finlandica", sans-serif;
   color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start; /* Keep content aligned to the top */
-  height: 100vh; /* Use 100vh to ensure full viewport height */
+  justify-content: flex-start;
+  height: 100vh;
   text-align: left;
   position: relative;
+  overflow: hidden;
 }
 
 /* Noise Effect */
@@ -35,15 +36,14 @@ body {
 /* Title Container */
 .title-container {
   position: relative;
-  text-align: left;
   width: 100%;
   padding-left: 5vw;
 }
 
 /* AVANOID Logo */
 .logo {
-  width: 95vw;
-  max-width: 2000px;
+  width: 90vw;
+  max-width: 1800px;
   position: absolute;
   top: 10vh;
   left: 0;
@@ -52,54 +52,95 @@ body {
 
 /* CONTACT Text */
 .contact-text {
-  font-size: 20vw;
+  font-size: 18vw;
   font-weight: normal;
   color: rgba(255, 255, 255, 0.6);
   filter: blur(4px);
   position: absolute;
-  top: 30vh; /* Move it down from the top */
-  right: 5vw; /* Align it to the right */
+  top: 35vh;
+  right: 5vw;
   z-index: 2;
+  text-transform: uppercase;
+  line-height: 0.9;
 }
 
 /* Contact Info */
 .contact-info {
-  position: absolute; /* Position it absolutely relative to the body */
-  bottom: 0; /* Align it at the bottom */
-  left: 0; /* Align it to the left */
-  font-size: 2vw;
-  padding-left: 2vw; /* Optional: Add some padding if you want space from the left */
-  padding-bottom: 2vh; /* Optional: Add some padding from the bottom */
-  color: white; /* Make sure the text is visible */
-  filter: blur(1.5px);
-  z-index: 10; /* Ensure it appears above other content */
-}
-
-/* Contact Info Paragraph Styling */
-.contact-info p {
-  margin-bottom: 1vh;
+  position: absolute;
+  bottom: 3vh;
+  left: 3vw;
+  font-size: 1.8vw;
+  color: white;
+  filter: blur(1.2px);
+  z-index: 10;
   letter-spacing: 1px;
 }
 
-/* Email Styling */
+.contact-info p {
+  margin-bottom: 1vh;
+}
+
+/* Email Highlight */
 .email {
   font-weight: bold;
   color: white;
 }
 
-/* Responsive Adjustments */
-@media (max-width: 768px) {
+/* --- Responsive Adjustments --- */
+@media (max-width: 1024px) {
   .logo {
-    width: 40vw;
+    width: 95vw;
+    top: 12vh;
   }
 
   .contact-text {
-    font-size: 14vw;
-    top: 12vw; /* Adjust this to move it down */
-    left: 6vw; /* Adjust this to move it to the left */
+    font-size: 20vw;
+    top: 32vh;
+    right: 4vw;
   }
 
   .contact-info {
-    font-size: 3vw;
+    font-size: 2.8vw;
+  }
+}
+
+@media (max-width: 768px) {
+  .logo {
+    position: static;
+    width: 85vw;
+    margin-top: 6vh;
+  }
+
+  .contact-text {
+    position: static;
+    text-align: center;
+    font-size: 14vw;
+    margin-top: 6vh;
+    filter: blur(3px);
+  }
+
+  .contact-info {
+    position: static;
+    text-align: center;
+    margin-top: auto;
+    font-size: 4vw;
+    padding-bottom: 6vh;
+    filter: blur(1px);
+  }
+
+  body {
+    justify-content: space-between;
+    overflow-y: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-text {
+    font-size: 16vw;
+    margin-top: 4vh;
+  }
+
+  .contact-info {
+    font-size: 5vw;
   }
 }

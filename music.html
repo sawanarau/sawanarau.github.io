@@ -1,4 +1,3 @@
-<!-- // nicht verschowmmen wenn hover -->
 <!DOCTYPE html>
 <html lang="de">
   <head>
@@ -14,46 +13,70 @@
   <body>
     <div class="noise"></div>
 
-    <!-- Logo at the top left -->
+    <!-- Logo -->
     <a href="index.html" class="logo-link">
       <img src="img/logo_crop_crop.png" alt="Logo" class="logo" />
     </a>
 
-    <div class="content-section row1">
-      <div class="image">
-        <img src="img/einz/hannesnoblur.png" alt="Image 2" class="image" />
+
+
+    <!-- Music Player Section -->
+    <div class="music-container">
+      <div class="track">
+        <p>MYstery rhymes</p>
+        <audio controls controlsList="nodownload">
+          <source src="audio/1 MYstery rhymes MIX 2 Aug 7.wav" type="audio/wav" />
+          Your browser does not support the audio element.
+        </audio>
       </div>
-      <div class="text">
-        <p>HANNES RATH</p>
-        <p>GITARRE</p>
+
+      <div class="track">
+        <p>Eminentia</p>
+        <audio controls controlsList="nodownload">
+          <source src="audio/2 Eminentia MIX 2 aug 7.wav" type="audio/wav" />
+          Your browser does not support the audio element.
+        </audio>
+      </div>
+
+      <div class="track">
+        <p>Liberte </p>
+        <audio controls controlsList="nodownload">
+          <source src="audio/3 Liberte MIX 1 aug7.wav" type="audio/wav" />
+          Your browser does not support the audio element.
+        </audio>
+      </div>
+
+      <div class="track">
+        <p>THe nightingale and the world</p>
+        <audio controls controlsList="nodownload">
+          <source src="audio/4 THe nightingale and the world MIx 1 AUg 7.wav" type="audio/wav" />
+          Your browser does not support the audio element.
+        </audio>
       </div>
     </div>
-
-    <div class="content-section row2">
-      <div class="image">
-        <img src="img/einz/wolfinoblur.png" alt="Image 3" class="image" />
-      </div>
-      <div class="text">
-        <p>WOLFI WAHLHÜTTER</p>
-        <p>BASS</p>
-      </div>
+    <!-- Bandcamp Link -->
+    <div class="bandcamp-link">
+      <a href="https://avanoid.bandcamp.com" target="_blank">
+        → Bandcamp
+      </a>
     </div>
-
-    <div class="content-section row3">
-      <div class="image">
-        <img src="img/einz/chriisnoblur.png" alt="Image 1" class="image" />
-      </div>
-      <div class="text">
-        <p>CHRIS PERSCH</p>
-        <p>DRUMS</p>
-      </div>
-    </div>
-
+    <!-- Footer -->
     <footer>
-      <footer>
-        <a href="https://www.c-mavric.at/">photos: c-mavric.at</a>
-        <a href="impressum.html">Impressum</a>
-      </footer>
+      <a href="https://www.c-mavric.at/">photos: c-mavric.at</a>
+      <a href="impressum.html">Impressum</a>
     </footer>
+    <script>
+      const audios = document.querySelectorAll("audio");
+
+      audios.forEach((audio) => {
+        audio.addEventListener("play", () => {
+          audios.forEach((other) => {
+            if (other !== audio) {
+              other.pause();
+            }
+          });
+        });
+      });
+    </script>
   </body>
 </html>
