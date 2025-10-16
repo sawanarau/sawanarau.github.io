@@ -5,14 +5,15 @@
   box-sizing: border-box;
 }
 
-/* Body styling */
 body {
   font-family: "Finlandica", sans-serif;
   color: white;
-  background: url("../img/bg2.jpg") no-repeat center center fixed;
+  background: url("../img/bg2.jpg") no-repeat center center;
   background-size: cover;
-  height: 100%;
+  background-attachment: scroll;
+  min-height: 100vh;
   padding: 0;
+  margin: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -43,7 +44,7 @@ body {
   max-width: 1000px;
   z-index: 10;
   filter: invert(50%);
-    filter: grayscale(1) brightness(0);
+  filter: grayscale(1) brightness(0);
 }
 
 /* Band Members Section */
@@ -86,17 +87,15 @@ body {
   text-align: left;
 }
 
-/* About Text (from old about page) */
 .about-text {
   margin-top: 10vh;
   font-size: 2vw;
-  color: rgba(136, 136, 136, 0.7);
+  color: rgba(214, 214, 214, 0.7);
   filter: blur(1.5px);
   padding: 0 10vw;
   text-align: justify;
 }
 
-/* Full-width Image (from old about page) */
 .full-width-image {
   width: 100%;
 }
@@ -138,6 +137,13 @@ footer a:hover {
     right: 2vw;
   }
 
+  body {
+    background-attachment: scroll;
+    background-position: center;
+    background-size: cover;
+    min-height: 100vh;
+  }
+
   .content-section {
     display: flex;
     flex-direction: column;
@@ -163,6 +169,16 @@ footer a:hover {
     padding: 0 5vw;
     filter: blur(0.5px);
   }
+
+
+  .full-width-image {
+    height: auto;
+    width: 100vh;
+    /* or smaller if desired */
+  }
+
+
+
 
   footer {
     flex-direction: column;
