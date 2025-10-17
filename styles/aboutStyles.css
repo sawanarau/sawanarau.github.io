@@ -10,8 +10,8 @@ body {
   color: white;
   background: url("../img/bg2.jpg") no-repeat center center;
   background-size: cover;
-  background-attachment: scroll;
-  min-height: 100vh;
+  background-attachment: scroll; /* don't use fixed on mobile */
+  min-height: 100vh; /* stretches background to full screen height */
   padding: 0;
   margin: 0;
   display: flex;
@@ -44,7 +44,7 @@ body {
   max-width: 1000px;
   z-index: 10;
   filter: invert(50%);
-  filter: grayscale(1) brightness(0);
+    filter: grayscale(1) brightness(0);
 }
 
 /* Band Members Section */
@@ -128,8 +128,6 @@ footer a {
 footer a:hover {
   color: white;
 }
-
-/* Responsive Adjustments */
 @media (max-width: 768px) {
   .logo {
     width: 40vw;
@@ -142,6 +140,7 @@ footer a:hover {
     background-position: center;
     background-size: cover;
     min-height: 100vh;
+    overflow-x: hidden; /* prevent any horizontal scroll */
   }
 
   .content-section {
@@ -172,13 +171,19 @@ footer a:hover {
 
 
   .full-width-image {
-    height: auto;
-    width: 100vh;
-    /* or smaller if desired */
+    position: relative;
+    width: 100vw;         
+    height: 50vh;          
+    overflow: hidden;      
   }
 
-
-
+  .full-width-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;    
+    object-position: center;
+    display: block;
+  }
 
   footer {
     flex-direction: column;
@@ -192,3 +197,4 @@ footer a:hover {
     font-size: 4vw;
   }
 }
+
