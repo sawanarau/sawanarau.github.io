@@ -61,6 +61,13 @@ body {
   color: white;
 }
 
+.bandcamp-link p{
+    font-size: 2vw;
+  color: rgba(169, 169, 169, 0.7);
+  filter: blur(1px);
+  margin-bottom: 1vh;
+}
+
 /* Music Container */
 .music-container {
   display: flex;
@@ -139,10 +146,20 @@ footer a:hover {
     font-size: 4vw;
   }
 
+  .bandcamp-link p{
+    font-size: 4vw;
+    filter: blur(0.5px);
+    margin-left: 20vw;
+    margin-right: 20vw;
+    text-align: center;
+}
+
   .track p {
     font-size: 4vw;
     filter: blur(0.5px);
   }
+
+  
 
   audio {
     width: 90%;
