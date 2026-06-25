@@ -44,72 +44,111 @@ body {
   z-index: 10;
 }
 
-/* Bandcamp Link */
-.bandcamp-link {
-  margin-top: 4vh;
-  font-size: 2vw;
+/* Music / Listen Section */
+.music-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3vh;
+  margin-top: 10vh;
+  margin-bottom: 6vh;
+  width: 80%;
+  position: relative;
   z-index: 5;
 }
 
-.bandcamp-link a {
+.listen-label {
+  font-size: 1.6vw;
+  letter-spacing: 0.3em;
+  color: rgba(169, 169, 169, 0.7);
+  filter: blur(1px);
+  margin-bottom: 1vh;
+}
+
+/* Platform Links */
+.platform-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  gap: 1.5vw;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.platform-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1vh;
+  text-decoration: none;
+  color: rgba(200, 200, 200, 0.7);
+  padding: 2vh 2vw;
+  min-width: 11vw;
+  filter: blur(0.6px);
+  transition: color 0.3s ease, filter 0.3s ease;
+}
+
+.platform-link:hover {
+  color: white;
+  filter: blur(0.2px);
+}
+
+.platform-icon {
+  width: 2.2vw;
+  height: 2.2vw;
+  min-width: 26px;
+  min-height: 26px;
+  fill: currentColor;
+}
+
+.platform-link span {
+  font-size: 1.2vw;
+  letter-spacing: 0.04em;
+}
+
+/* Tablet adjustment: keep 2x2 grid feel before full mobile stacking */
+@media (max-width: 1100px) and (min-width: 769px) {
+  .platform-links {
+    gap: 3vw 4vw;
+  }
+
+  .platform-link {
+    min-width: 20vw;
+  }
+
+  .platform-icon {
+    width: 3vw;
+    height: 3vw;
+  }
+
+  .platform-link span {
+    font-size: 1.8vw;
+  }
+}
+
+/* No-electronics note */
+.no-electronics {
+  margin-top: 2vh;
+  font-size: 1.3vw;
+  font-style: italic;
+  color: rgba(169, 169, 169, 0.7);
+  filter: blur(1px);
+  text-align: center;
+}
+
+/* Label Link (reuses the site's "-> link" convention) */
+.label-link {
+  margin-top: 1vh;
+  font-size: 1.3vw;
   color: rgba(200, 200, 200, 0.7);
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
-.bandcamp-link a:hover {
+.label-link:hover {
   color: white;
-}
-
-.bandcamp-link p{
-    font-size: 2vw;
-  color: rgba(169, 169, 169, 0.7);
-  filter: blur(1px);
-  margin-bottom: 1vh;
-}
-
-/* Music Container */
-.music-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 5vh;
-  margin-top: 8vh;
-  width: 80%;
-}
-
-.track {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-}
-
-.track p {
-  font-size: 2vw;
-  color: rgba(169, 169, 169, 0.7);
-  filter: blur(1px);
-  margin-bottom: 1vh;
-}
-
-/* Audio player styling */
-audio {
-  width: 60%;
-  max-width: 600px;
-  outline: none;
-  filter: grayscale(0.8) brightness(0.8);
-  background-color: rgba(255, 255, 255, 0.05);
-  border-radius: 8px;
-}
-
-audio::-webkit-media-controls-panel {
-  background-color: rgba(30, 30, 30, 0.8);
-}
-
-audio::-webkit-media-controls-play-button,
-audio::-webkit-media-controls-timeline,
-audio::-webkit-media-controls-volume-slider {
-  filter: invert(1);
 }
 
 /* Footer */
@@ -142,27 +181,50 @@ footer a:hover {
     width: 80vw;
   }
 
-  .bandcamp-link {
-    font-size: 4vw;
+  .music-container {
+    margin-top: 6vh;
+    width: 92%;
   }
 
-  .bandcamp-link p{
-    font-size: 4vw;
-    filter: blur(0.5px);
-    margin-left: 20vw;
-    margin-right: 20vw;
-    text-align: center;
-}
-
-  .track p {
+  .listen-label {
     font-size: 4vw;
     filter: blur(0.5px);
   }
 
-  
+  .platform-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5vh;
+    width: 100%;
+  }
 
-  audio {
-    width: 90%;
+  .platform-link {
+    width: 75%;
+    min-width: unset;
+    padding: 2.5vh 6vw;
+    filter: blur(0.3px);
+  }
+
+  .platform-icon {
+    width: 7vw;
+    height: 7vw;
+  }
+
+  .platform-link span {
+    font-size: 4vw;
+  }
+
+  .no-electronics {
+    font-size: 3.6vw;
+    filter: blur(0.5px);
+    margin-left: 8vw;
+    margin-right: 8vw;
+    margin-top: 3vh;
+  }
+
+  .label-link {
+    font-size: 4vw;
+    margin-top: 1vh;
   }
 
   footer {
