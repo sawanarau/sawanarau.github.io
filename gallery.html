@@ -4,15 +4,26 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AVANOID GALLERY</title>
-    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
-    <link rel="icon" type="image/png" href="img/favicon.png" sizes="32x32">
-    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico" />
+    <link rel="icon" type="image/png" href="img/favicon.png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png" />
+
     <link rel="stylesheet" href="styles/galleryStyles.css" />
+
     <link
       href="https://fonts.googleapis.com/css2?family=Finlandica&display=swap"
       rel="stylesheet"
     />
- <!-- Preload Images -->
+
+  
+    <link rel="preload" href="img/AvanoidLive/AvanoidLive1.jpeg" as="image" />
+    <link rel="preload" href="img/AvanoidLive/AvanoidLive2.jpeg" as="image" />
+    <link rel="preload" href="img/AvanoidLive/AvanoidLive3.jpeg" as="image" />
+    <link rel="preload" href="img/AvanoidLive/AvanoidLive4.jpeg" as="image" />
+    <link rel="preload" href="img/AvanoidLive/AvanoidLive5.jpeg" as="image" />
+    <link rel="preload" href="img/AvanoidLive/AvanoidLive6.jpeg" as="image" />
+
     <link
       rel="preload"
       href="img/img_normal/avanoid_17-11-24_CM10604.jpg"
@@ -74,6 +85,7 @@
       as="image"
     />
   </head>
+
   <body>
     <!-- Preloader -->
     <div id="preloader">
@@ -88,7 +100,33 @@
     <!-- Gallery Grid -->
     <main>
       <div class="gallery">
-        <!-- 24 images -->
+   
+        <img
+          src="img/AvanoidLive/AvanoidLive1.jpeg"
+          class="gallery-item"
+        />
+        <img
+          src="img/AvanoidLive/AvanoidLive2.jpeg"
+          class="gallery-item"
+        />
+        <img
+          src="img/AvanoidLive/AvanoidLive3.jpeg"
+          class="gallery-item"
+        />
+        <img
+          src="img/AvanoidLive/AvanoidLive4.jpeg"
+          class="gallery-item"
+        />
+        <img
+          src="img/AvanoidLive/AvanoidLive5.jpeg"
+          class="gallery-item"
+        />
+        <img
+          src="img/AvanoidLive/AvanoidLive6.jpeg"
+          class="gallery-item"
+        />
+
+        <!-- Existing Images -->
         <img
           src="img/img_newthumbnails/avanoid_17-11-24_CM10604.jpg"
           class="gallery-item"
@@ -148,11 +186,12 @@
         <img class="modal-content" />
       </div>
     </main>
+
     <footer>
       <a href="https://www.c-mavric.at/">photos: c-mavric.at</a>
       <a href="impressum.html">Impressum</a>
     </footer>
-  </body>
 
-  <script src="scripts/galleryScript.js"></script>
+    <script src="scripts/galleryScript.js"></script>
+  </body>
 </html>
